@@ -1,10 +1,12 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import { BrowserRouter } from 'react-router-dom'
+import { createRoot } from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App.tsx";
+import "./index.css";
 
-createRoot(document.getElementById('root')!).render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>,
-)
+const basePath = "/buildify-reactjs";
+
+createRoot(document.getElementById("root")!).render(
+  <BrowserRouter basename={basePath}>
+    <App />
+  </BrowserRouter>,
+);

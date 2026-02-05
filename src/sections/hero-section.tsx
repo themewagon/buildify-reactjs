@@ -2,9 +2,11 @@ import AnimatedContent from "../components/animated-content";
 import { SparkleIcon, StarIcon } from "lucide-react";
 import CustomIcon from "../components/custom-icon";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function HeroSection() {
     return (
-        <section className="bg-[url('/assets/hero-gradient-bg.png')] bg-cover bg-center bg-no-repeat px-4 md:px-16 lg:px-24 xl:px-32">
+        <section className="bg-cover bg-center bg-no-repeat px-4 md:px-16 lg:px-24 xl:px-32" style={{ backgroundImage: `url(${baseUrl}assets/hero-gradient-bg.png)` }}>
             <div className="max-w-7xl mx-auto flex flex-col items-center justify-center h-screen">
                 <AnimatedContent reverse distance={30} className="flex items-center gap-2 bg-white/50 backdrop-blur p-1 rounded-full">
                     <div className="flex items-center -space-x-3">
@@ -38,14 +40,14 @@ export default function HeroSection() {
                     </p>
                 </AnimatedContent>
                 <AnimatedContent className="flex flex-col md:flex-row items-center gap-4 mt-6 w-full md:w-auto">
-                    <a href="/" className="py-3 md:py-2.5 w-full md:w-auto px-8 border border-orange-200 bg-linear-to-tl from-orange-600 to-orange-500 text-white text-center rounded-full">
+                    <a href={baseUrl} className="py-3 md:py-2.5 w-full md:w-auto px-8 border border-orange-200 bg-linear-to-tl from-orange-600 to-orange-500 text-white text-center rounded-full">
                         Get Started
                     </a>
-                    <a href="/" className="relative py-3 md:py-2.5 w-full md:w-auto px-8 bg-white/50 text-gray-600 font-medium text-center border border-white rounded-full">
+                    <a href={baseUrl} className="relative py-3 md:py-2.5 w-full md:w-auto px-8 bg-white/50 text-gray-600 font-medium text-center border border-white rounded-full">
                         Watch Demo
                         <AnimatedContent direction="horizontal" className="absolute size-8 pointer-events-none right-0 top-full -translate-y-1/2">
                             <img
-                                src="/assets/mouse-arrow.svg"
+                                src={`${baseUrl}assets/mouse-arrow.svg`}
                                 alt="mouse-arrow"
                                 width={24}
                                 height={24}

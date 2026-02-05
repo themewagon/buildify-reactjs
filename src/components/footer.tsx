@@ -1,13 +1,16 @@
 import { InstagramIcon, LinkedinIcon, TwitterIcon } from "lucide-react";
 import AnimatedContent from "./animated-content";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export default function Footer() {
+    const logoSrc = `${baseUrl}assets/logo-colored.svg`;
     return (
         <footer className="px-4 md:px-16 lg:px-24 xl:px-32">
             <div className="border-x border-gray-200 px-4 md:px-12 max-w-7xl mx-auto pt-40">
                 <div className="flex flex-col md:flex-row items-start justify-between relative p-8 md:p-12 overflow-hidden pb-32 md:pb-42 bg-linear-to-t from-orange-50 to-orange-100 rounded-t-2xl">
                     <img
-                        src="/assets/logo-colored.svg"
+                        src={logoSrc}
                         alt="Logo"
                         width={135}
                         height={35}
@@ -15,7 +18,7 @@ export default function Footer() {
                     />
                     <AnimatedContent distance={40} className="max-w-72">
                         <img
-                            src="/assets/logo-colored.svg"
+                            src={logoSrc}
                             alt="Logo"
                             width={135}
                             height={35}
